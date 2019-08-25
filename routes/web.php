@@ -28,9 +28,8 @@ Route::get('/','PagesController@index');
 Route::get('/forum','PagesController@forum');
 Route::get('/services','PagesController@services');
 Route::get('/messenger','PagesController@messenger');
-Route::post('posts', 
-      array('uses'=>'App\Controllers\PostsController@store',
-             'as' => 'posts.create'));
+Route::post('/posts/create','PostsController@store');
+      
 Route::resource('posts', 'PostsController');
 
 Route::get('/forum', function(){
